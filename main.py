@@ -22,9 +22,11 @@ import uvicorn
 
 app = FastAPI()
 
-@app.get("/")
+from fastapi.responses import JSONResponse
+
+@app.api_route("/", methods=["GET", "HEAD"])
 def read_root():
-    return {"message": "Selfbot is running"}
+    return JSONResponse(content={"message": "Selfbot is running"})
 
 def run_web():
     uvicorn.run(app, host="0.0.0.0", port=8080)
