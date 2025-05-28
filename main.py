@@ -10,7 +10,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content.startswith("!m2 "):
+    if message.content.startswith(",2 "):
         content = message.content[4:].strip()
         await message.channel.send(content)
 import os
